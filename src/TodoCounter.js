@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoCounter.css';
 import logo from './assets/logo.png';
 
-function TodoCounter() {
+function TodoCounter({ total, completed }) {
   return (
     <div className="TodoHeader">
       <div className="TodoHeaderLogo">
@@ -15,7 +15,9 @@ function TodoCounter() {
         </a>
       </div>
       <h1 className="TodoTitle">Just Your TO DO's</h1>
-      <h3 className="TodoCounter">You've completed 2 out of 3</h3>
+      <h3 className="TodoCounter">
+        You've completed {completed} out of {total}
+      </h3>
     </div>
   );
 }
