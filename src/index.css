@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(200deg, rgba(17, 18, 63, 1) 0%, rgba(75, 120, 119, 1) 50%, rgba(163, 119, 86, 1) 100%);
+  color: #ffffff;
+  font-family: 'Circular Std', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root {
+  margin: 50px 24px;
+  position: relative;
+  min-height: 100vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
