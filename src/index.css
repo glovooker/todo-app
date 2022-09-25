@@ -7,6 +7,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: overlay
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 90%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 199, 199, 0.438);
+  border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 250, 250, 0.74);
 }
 
 #root {

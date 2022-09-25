@@ -4,16 +4,18 @@ import FeatherIcon from 'feather-icons-react';
 
 function TodoItem(props) {
   let actionIcon = 'circle';
+  let toggleAction = props.onComplete;
 
   if (props.completed) {
     actionIcon = 'check-circle';
+    toggleAction = props.onUnComplete;
   }
 
   return (
     <li className="TodoItem">
       <span
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-        onClick={props.onComplete}
+        onClick={toggleAction}
       >
         <FeatherIcon icon={actionIcon} />
       </span>

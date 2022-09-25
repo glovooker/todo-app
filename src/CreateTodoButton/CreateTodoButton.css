@@ -15,11 +15,20 @@
     align-items: center;
     height: 64px;
     width: 64px;
-
     transform: rotate(0);
     transition: .3s ease;
 }
 
 .CreateTodoButton:hover {
     transform: rotate(224deg);
+}
+
+.CreateTodoButton.opened {
+    transform: rotate(224deg);
+    transition: .3s ease;
+    z-index: 1;
+}
+
+.CreateTodoButton.opened:hover {
+    transform: rotate(0);
 }

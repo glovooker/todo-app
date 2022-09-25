@@ -1,0 +1,64 @@
+.LoadingTodo-Container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    width: 50vw;
+}
+
+.LoadingTodo-text {
+    border-radius: 10px;
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 200px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: transparent;
+}
+
+.LoadingTodo-Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50px;
+    /* background-color: #CCC; */
+}
+
+.LoadingTodo-Icon.add {
+    position: absolute;
+    left: 24px;
+}
+
+.LoadingTodo-Icon.delete {
+    position: absolute;
+    right: 24px;
+}
+
+.LoadingTodo-Container,
+.LoadingTodo-text,
+.LoadingTodo-Icon {
+    background: linear-gradient(90deg, rgba(250, 250, 250, 0.74), rgba(200, 199, 199, 0.438));
+    background-size: 500% 500%;
+    animation: loadingAnimation 2s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
