@@ -1,14 +1,14 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import FeatherIcon from 'feather-icons-react';
 import './TodoForm.css';
 
-function TodoForm() {
+function TodoForm({
+  addTodo,
+  setOpenModal,
+  buttonDisabled,
+  setButtonDisabled,
+}) {
   const [newTodoValue, setNewTodoValue] = React.useState('');
-
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
-
-  const { buttonDisabled, setButtonDisabled } = React.useContext(TodoContext);
 
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
@@ -39,19 +39,22 @@ function TodoForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <FeatherIcon size="60" icon="plus-square" />
+      <FeatherIcon
+        size='60'
+        icon='plus-square'
+      />
       <label>Add a New To Do</label>
       <input
-        type="text"
-        name="text"
+        type='text'
+        name='text'
         value={newTodoValue}
         onChange={onChange}
-        placeholder="Type a task..."
+        placeholder='Type a task...'
       />
 
-      <div className="TodoForm-buttonContainer">
+      <div className='TodoForm-buttonContainer'>
         <button
-          type="submit"
+          type='submit'
           className={`TodoForm-button TodoForm-button--add ${
             buttonDisabled && 'disabled'
           }`}
@@ -60,8 +63,8 @@ function TodoForm() {
           Add
         </button>
         <button
-          type="button"
-          className="TodoForm-button TodoForm-button--cancel"
+          type='button'
+          className='TodoForm-button TodoForm-button--cancel'
           onClick={onCancel}
         >
           Cancel
