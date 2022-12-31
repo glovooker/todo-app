@@ -24,3 +24,7 @@
     margin: 0 auto;
     display: block;
 }
+
+.TodoCounter--loading {
+    opacity: 40%;
+}

@@ -23,3 +23,7 @@
 .TodoSearch:focus {
     outline: none;
 }
+
+.TodoSearch:disabled {
+    opacity: 40%;
+}

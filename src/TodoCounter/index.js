@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoCounter.css';
 import logo from '../assets/logo.png';
 
-function TodoCounter({ totalTodos, completedTodos }) {
+function TodoCounter({ totalTodos, completedTodos, loading }) {
   return (
     <div className='TodoHeader'>
       <div className='TodoHeaderLogo'>
@@ -19,7 +19,7 @@ function TodoCounter({ totalTodos, completedTodos }) {
         </a>
       </div>
       <h1 className='TodoTitle'>Just Your TO DO's</h1>
-      <h3 className='TodoCounter'>
+      <h3 className={`TodoCounter ${!!loading && 'TodoCounter--loading'}`}>
         You've completed {completedTodos} out of {totalTodos}
       </h3>
     </div>

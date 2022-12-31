@@ -11,6 +11,7 @@ import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoHeader } from '../TodoHeader';
+import { EmptySearchTodos } from '../EmptySearchTodos';
 
 function App() {
   const {
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
@@ -44,9 +45,14 @@ function App() {
         />
       </TodoHeader>
 
-      <TodoList>
-        {error && <TodosError error={error} />}
-        {loading && (
+      <TodoList
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
+        searchText={searchValue}
+        onError={() => <TodosError />}
+        onLoading={() => (
           <>
             <TodosLoading />
             <TodosLoading />
@@ -55,9 +61,12 @@ function App() {
             <TodosLoading />
           </>
         )}
-        {!loading && !searchedTodos.length && <EmptyTodos />}
-
-        {searchedTodos.map((todo) => (
+        onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResults={(searchText) => (
+          <EmptySearchTodos searchText={searchText} />
+        )}
+      >
+        {(todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -66,7 +75,7 @@ function App() {
             onUnComplete={() => unCompleteTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
-        ))}
+        )}
       </TodoList>
 
       {!!openModal && (
