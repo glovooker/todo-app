@@ -1,0 +1,107 @@
+.ChangeAlert-container {
+    font-family: 'Circular Std', sans-serif;
+    width: 90%;
+    max-width: 500px;
+    background-color: #a37756;
+    padding: 33px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    color: #FAFAFA;
+    margin-bottom: 26px;
+    margin-top: 15px;
+}
+
+input {
+    background: #FAFAFA;
+    border-radius: 10px;
+    border: 0px solid;
+    margin-bottom: 24px;
+    height: 54px;
+    width: calc(100% - 50%);
+    min-width: 25vw;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 25px;
+    font-family: 'Circular Std', sans-serif;
+    font-weight: 400;
+    color: #1E1E1F;
+    box-shadow: 0px 0px 30px rgba(32, 35, 41, 0.15);
+}
+
+input::placeholder {
+    color: #A5A5A5;
+    font-family: 'Circular Std', sans-serif;
+    font-weight: 400;
+}
+
+input:focus {
+    outline: none;
+}
+
+.ChangeAlert-buttonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.ChangeAlert-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #202329;
+    width: 170px;
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Circular Std', sans-serif;
+}
+
+.ChangeAlert-button--add {
+    font-weight: 400;
+    color: #4caf50;
+    background: #FAFAFA;
+    box-shadow: 0px 0px 30px rgba(32, 35, 41, 0.15);
+}
+
+.ChangeAlert-button--add.disabled {
+    font-weight: 400;
+    color: #727272;
+    background: #FAFAFA;
+}
+
+.ChangeAlert-button--add.disabled:hover {
+    font-weight: 400;
+    color: #727272;
+    background: #FAFAFA;
+    cursor: not-allowed;
+}
+
+.ChangeAlert-button--cancel {
+    font-weight: 400;
+    color: #A5A5A5;
+    background: #FAFAFA;
+    box-shadow: 0px 0px 30px rgba(32, 35, 41, 0.15);
+}
+
+.ChangeAlert-button--add:hover {
+    color: #4caf50;
+    font-weight: 600;
+    transition: 0.3 ease-in-out;
+}
+
+.ChangeAlert-button--cancel:hover {
+    color: rgb(233, 23, 23);
+    font-weight: 600;
+    transition: 0.3 ease-in-out;
+}

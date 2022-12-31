@@ -12,6 +12,7 @@ import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoHeader } from '../TodoHeader';
 import { EmptySearchTodos } from '../EmptySearchTodos';
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
   const {
@@ -30,6 +31,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -95,6 +97,8 @@ function App() {
         buttonDisabled={buttonDisabled}
         setButtonDisabled={setButtonDisabled}
       />
+
+      <ChangeAlert sincronize={sincronizeTodos} />
     </>
   );
 }
